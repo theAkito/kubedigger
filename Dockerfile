@@ -1,8 +1,7 @@
 FROM debian:testing
 MAINTAINER Akito <akito.kitsune@protonmail.com>
 LABEL version="0.1.0"
-COPY docker/micro-1.4.2-dev.77-linux64 \
-     /usr/bin
+COPY docker/micro-1.4.2-dev.77-linux64 /usr/bin
 RUN apt-get update && apt-get install -y                      \
       locales                                                 \
       traceroute                                              \
@@ -25,7 +24,6 @@ RUN apt-get update && apt-get install -y                      \
     rm -rf /var/lib/apt/lists/*                            && \
     localedef -i en_US -c -f UTF-8 -A                         \
     /usr/share/locale/locale.alias en_US.UTF-8             && \
-    echo 'alias micro="/usr/bin/micro-1.4.2-dev.77-linux64" ' \
-      >> /etc/bash.bashrc
+    mv /usr/bin/micro-1.4.2-dev.77-linux64 /usr/bin/micro
 ENV LANG en_US.utf8
 ENTRYPOINT ["/bin/bash"]
