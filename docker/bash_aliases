@@ -1,0 +1,112 @@
+#------ Generica
+        alias s='cd ~/src '
+        alias h='cd ~ '
+        alias r='cd / '
+        alias b='cd /boot '
+        alias M='cd /mnt '
+        alias MM='cd /media '
+       #alias l='cd /var/log '
+        alias www='cd /var/www '
+        alias ls='ls -h '
+        alias ll='ls -hl '
+        alias lal='ls -alh '
+        alias ls-all='ls -alchiRULZ1 '
+        alias ..='cd .. '
+        alias ...='cd ../.. '
+        alias ....='cd ../../.. '
+        alias .....='cd ../../../.. '
+        alias ......='cd ../../../../.. '
+        alias trim-nl='tr -d "\n\r" < trim > trim.out && mv trim.out trim && sudo apt install $(cat trim) ' # removes '\n\r' from 'trim' and asks to install packages from file
+       #alias nocomment='grep -Ev '''^(#|$)''' ' # cat text file without comments
+        alias PATH='echo -e ${PATH//:/\\n} ' # show PATH in pretty fashion
+        alias sping='ping -c 5 '
+        alias fping='ping -c 10 -i .2 '
+        alias sc='sudo systemctl '
+        alias scs='sudo systemctl status '
+        alias scl='sudo systemctl reload '
+        alias scr='sudo systemctl restart '
+        alias sca='sudo systemctl start '
+        alias sco='sudo systemctl stop '
+        alias scdl='sudo systemctl daemon-reload '
+        alias jc='sudo journalctl '
+        alias jcxr='sudo journalctl -xr'
+        alias hnc='hostnamectl '
+        alias tdc='timedatectl '
+        alias sblame='systemd-analyze blame '
+        alias stime='systemd-analyze time '
+        alias scritical-chain='systemd-analyze critical-chain '
+        alias splot='systemd-analyze plot '
+        alias sdot='systemd-analyze dot'
+        alias sdump='systemd-analyze dump '
+        alias sverify='systemd-analyze verify '
+        alias wg='wget -q '
+        alias wgl='wget '
+        alias wget='wget -q '
+        alias wgetl='wget '
+        alias nanoi='nano -I '
+        alias n='nano '
+        alias sn='sudo nano '
+        alias sudo='sudo -E env "PATH=$PATH" '
+        alias usernames='cut -d: -f1 /etc/passwd '
+        alias fd='sudo fdisk -l | grep -A 7 /dev/sd '
+        alias mnt='mount | grep /dev/sd '
+        alias smt='sudo mount '
+        alias os-info='cat /etc/os-release '
+        alias cron-r='sudo crontab -u root -e '
+        alias cron-u='crontab -e '
+        alias sshd-confg='sudo nano /etc/ssh/sshd_config '
+        alias sourcesg='sudo nano /etc/apt/sources.list '
+        alias sshd-conf='sudo micro /etc/ssh/sshd_config '
+        alias sources='sudo micro /etc/apt/sources.list '
+        alias sauce='source /etc/bash.bashrc ; source ~/.bashrc '
+          
+        function cate { file="$1"; cat $1 && echo; }
+          
+        #---- APT 
+        alias install-full='sudo apt install --reinstall --install-suggests --install-recommends '
+        alias upgrade='sudo apt update && sudo apt upgrade '
+        alias upgradable='apt list --upgradeable '
+        alias install='sudo apt install '
+        alias reinstall='sudo apt install --reinstall '
+        alias remove='sudo apt remove '
+        alias purge='sudo apt purge '
+        alias policy='apt policy '
+        alias installed='apt list --installed '
+        alias all-packages='apt list --all-versions '
+        alias autoremove='sudo apt autoremove '
+        alias show='apt show '
+        alias search='apt search '
+
+
+#------ General
+
+        alias gpg='gpg --verbose '
+        alias r-crc32='rhash --crc32 -v '
+        alias r-md5='rhash --md5 -v '
+        alias r1='rhash --sha1 -v '
+        alias r256='rhash --sha256 -v '
+        alias r512='rhash --sha512 -v '
+        alias r3-512='rhash --sha3-512 -v '
+        alias ns-1='sudo netstat -atevpN | grep ' # append either sought port or process
+        alias ud='udisksctl '
+        alias ud-mb='udisksctl mount -b ' # append whole disk, NOT partition
+        alias vbx-fixtime='sudo hwclock --hctosys '
+        alias bashrcg='sudo nano /etc/bash.bashrc '
+        alias bashrc='sudo micro /etc/bash.bashrc '
+
+#------ Custom
+
+    #---- Network
+        
+        #---- ip
+        alias ipa='ip a '
+        alias ipf='ip a show eth0 '
+        alias ipw='ip a show wlan0 '
+        alias ipf4='ip -4 a show eth0 '
+        alias ipf6='ip -6 a show eth0 '
+        alias ipw4='ip -4 a show eth0 '
+        alias ipw6='ip -6 a show eth0 '
+          
+        #---- micro
+        alias m='micro '
+        alias mm='sudo micro '
