@@ -9,8 +9,6 @@
         alias .....='cd ../../../.. '
         alias ......='cd ../../../../.. '
         alias PATH='echo -e ${PATH//:/\\n} ' # show PATH in pretty fashion
-        alias sping='ping -c 5 '
-        alias fping='ping -c 10 -i .2 '
         alias sauce='source /etc/bash.bashrc ; source ~/.bashrc '
           
         function cate { file="$1"; cat $1 && echo; }
@@ -45,6 +43,16 @@
         alias nc='ncat '
         alias nl='ncat -lvp '
         alias nz='nc -vz '
+
+        #---- traceroute
+        alias tr='traceroute '
+        alias t='traceroute '
+
+        # ping
+        alias oping='ping '
+        alias ping='hping3'
+        alias sping='hping3 -c 5 '
+        alias fping='hping3 -c 5 -i u150000 '
           
         #---- micro
         alias m='micro '
