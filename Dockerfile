@@ -1,6 +1,6 @@
 FROM debian:testing
 LABEL maintainer="Akito <the@akito.ooo>" \
-      version="0.4.0"
+      version="0.4.1"
 COPY docker/bash_aliases /etc
 RUN apt-get update && apt-get install -y                      \
       iputils-arping                                          \
@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y                      \
       traceroute                                              \
       dnsutils                                                \
       nmap                                                    \
+      ncat                                                    \
       tcpdump                                                 \
       iperf                                                   \
       hping3                                                  \
