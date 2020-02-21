@@ -1,6 +1,6 @@
 FROM debian:testing
 LABEL maintainer="Akito <the@akito.ooo>" \
-      version="0.2.0"
+      version="0.4.0"
 COPY docker/bash_aliases /etc
 RUN apt-get update && apt-get install -y                      \
       iputils-arping                                          \
