@@ -13,7 +13,7 @@ LABEL org.opencontainers.image.created="${BUILD_DATE}"
 LABEL org.opencontainers.image.title="Kubernetes Cluster Debugging Utility"
 LABEL org.opencontainers.image.description="Aims to be deployed as a workload in a Kubernetes cluster,\
  so that you can debug and test connectivity between workloads from their perspective."
-LABEL org.opencontainers.image.url="akito.ooo"
+LABEL org.opencontainers.image.url="https://hub.docker.com/r/akito13/kubedigger"
 LABEL org.opencontainers.image.documentation=""
 LABEL org.opencontainers.image.source="https://github.com/theAkito/docker-kubedigger"
 LABEL org.opencontainers.image.licenses="GPL-3.0+"
@@ -52,7 +52,7 @@ RUN apt-get update && apt-get install -y                      \
     rm -rf /var/lib/apt/lists/*                            && \
     localedef -i en_US -c -f UTF-8 -A                         \
     /usr/share/locale/locale.alias en_US.UTF-8             && \
-    cat /etc/bash_aliases >> /etc/bash.bashrc
+    printf '\n%s\n' "$(</etc/bash_aliases)" >> /etc/bash.bashrc
 
 ENV LANG en_US.utf8
 ENTRYPOINT ["/bin/bash"]
